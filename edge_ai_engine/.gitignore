@@ -1,0 +1,175 @@
+# Build directories
+build/
+cmake-build-*/
+out/
+
+# Compiled Object files
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+bin/
+lib/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+!*.cmake.in
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Testing
+test_results/
+coverage/
+*.gcov
+*.gcda
+*.gcno
+gtest/
+googletest/
+_deps/
+
+# Profiling and tracing
+*.trace
+*.json
+trace_*.json
+profiler_*.json
+*.prof
+*.perf
+
+# Model files (large binary files)
+*.onnx
+*.tflite
+*.pt
+*.pth
+*.pb
+*.h5
+*.pkl
+*.bin
+*.weights
+
+# Data files
+data/models/
+data/benchmarks/
+data/test_data/
+*.csv
+*.tsv
+*.parquet
+
+# Logs
+*.log
+logs/
+log/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Package files
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Documentation build
+docs/_build/
+docs/build/
+site/
+
+# Backup files
+*.bak
+*.backup
+*.orig
+
+# Local configuration
+config/local/
+*.local
+.env
+.env.local
+
+# Performance reports
+benchmark_results/
+performance_reports/
+*.report
+reports/
+
+# Test reports
+test_reports/
+bdt_test_report.html
+bdt_test_results.json
+property_test_report.html
+simple_property_test_report.html
+comprehensive_test_report.html
+comprehensive_test_report.json
+comprehensive_test_report.md
+validation_report_*.html
+validation_report_*.json
+validation_report_*.md
+
+# Third-party dependencies
+third_party/
+external/
+deps/
+
+# Conan
+conandata.yml
+conanfile.txt
+conaninfo.txt
+conanbuildinfo.*
+
+# Vcpkg
+vcpkg_installed/
+
+# Bazel
+bazel-*
+.bazelrc
