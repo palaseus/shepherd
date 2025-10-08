@@ -146,6 +146,42 @@ public:
      * @param types Vector of output types
      */
     void SetOutputTypes(const std::vector<DataType>& types);
+    
+    /**
+     * @brief Set quantization type
+     * @param type Quantization type
+     */
+    void SetQuantizationType(DataType type);
+    
+    /**
+     * @brief Set quantized flag
+     * @param quantized True if model is quantized
+     */
+    void SetQuantized(bool quantized);
+    
+    /**
+     * @brief Set pruned flag
+     * @param pruned True if model is pruned
+     */
+    void SetPruned(bool pruned);
+    
+    /**
+     * @brief Set pruning ratio
+     * @param ratio Pruning ratio (0.0 to 1.0)
+     */
+    void SetPruningRatio(float ratio);
+    
+    /**
+     * @brief Set graph optimized flag
+     * @param optimized True if model is graph optimized
+     */
+    void SetGraphOptimized(bool optimized);
+    
+    /**
+     * @brief Check if model is valid
+     * @return True if model is valid
+     */
+    bool IsValid() const;
 
 protected:
     std::string name_;
@@ -157,6 +193,11 @@ protected:
     std::vector<TensorShape> output_shapes_;
     std::vector<DataType> input_types_;
     std::vector<DataType> output_types_;
+    DataType quantization_type_;
+    bool quantized_;
+    bool pruned_;
+    float pruning_ratio_;
+    bool graph_optimized_;
 };
 
 } // namespace edge_ai

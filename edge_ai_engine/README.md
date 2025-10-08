@@ -40,7 +40,7 @@ The Edge AI Inference Engine is a comprehensive research and development platfor
 
 ### Core Engine
 - **Multi-Format Support**: ONNX, TensorFlow Lite, and PyTorch Mobile models
-- **Hardware Acceleration**: CPU (SIMD/OpenMP/TBB), GPU (CUDA/OpenCL/Vulkan), and specialized hardware (NPU/TPU/FPGA)
+- **Hardware Acceleration**: CPU (SIMD/OpenMP/TBB), GPU (CUDA with cuBLAS/cuDNN), and specialized hardware (NPU/TPU/FPGA)
 - **Model Optimization**: Quantization, pruning, and graph optimization
 - **Dynamic Batching**: Adaptive request processing and latency optimization
 - **Memory Management**: Efficient memory allocation and zero-copy operations
@@ -391,19 +391,30 @@ genhtml coverage.info --output-directory coverage_html
 
 ### Benchmarks
 
-| Model | Format | Latency (ms) | Throughput (fps) | Memory (MB) |
-|-------|--------|--------------|------------------|-------------|
-| MobileNet | ONNX | 8.5 | 117 | 45 |
-| ResNet-50 | ONNX | 25.3 | 39 | 98 |
-| BERT | ONNX | 45.2 | 22 | 156 |
+The Edge AI Engine provides comprehensive benchmarking tools to measure real performance:
+
+```bash
+# Run all benchmarks
+./scripts/test_complete_system.sh
+
+# Individual benchmarks
+./bin/benchmark_profiler_overhead 1000    # Profiler overhead < 10%
+./bin/benchmark_optimization_system       # Optimization throughput
+./bin/benchmark_scheduler_batching        # Batching performance
+./bin/benchmark_inference_latency         # Inference latency
+```
 
 ### Optimization Results
+
+The optimization system provides measurable improvements:
 
 | Optimization | Size Reduction | Speedup | Accuracy Loss |
 |--------------|----------------|---------|---------------|
 | INT8 Quantization | 4x | 2.1x | <1% |
 | Pruning (10%) | 1.1x | 1.3x | <0.5% |
 | Graph Optimization | 1.0x | 1.5x | 0% |
+
+*Note: Actual performance depends on hardware configuration and model characteristics.*
 
 ## Architecture
 

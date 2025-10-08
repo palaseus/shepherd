@@ -16,6 +16,10 @@
 # Optimization library
 add_library(edge_ai_engine_optimization
     optimization/optimization_manager.cpp
+    optimization/optimizer.cpp
+    optimization/quantizer.cpp
+    optimization/pruner.cpp
+    optimization/graph_optimizer.cpp
 )
 
 # ML Policy library
@@ -129,7 +133,7 @@ add_library(edge_ai_engine_hardware
 add_library(edge_ai_engine_backend
     backend/execution_backend.cpp
     backend/cpu_backend.cpp
-    backend/mock_gpu_backend.cpp
+    # backend/cuda_backend.cpp  # Temporarily disabled due to CUDA header conflicts
     backend/backend_registry.cpp
 )
 

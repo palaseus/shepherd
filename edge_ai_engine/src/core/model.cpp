@@ -12,7 +12,12 @@ namespace edge_ai {
 Model::Model()
     : type_(ModelType::UNKNOWN)
     , size_(0)
-    , optimized_(false) {
+    , optimized_(false)
+    , quantization_type_(DataType::UNKNOWN)
+    , quantized_(false)
+    , pruned_(false)
+    , pruning_ratio_(0.0f)
+    , graph_optimized_(false) {
 }
 
 Model::~Model() = default;
@@ -87,6 +92,34 @@ void Model::SetInputTypes(const std::vector<DataType>& types) {
 
 void Model::SetOutputTypes(const std::vector<DataType>& types) {
     output_types_ = types;
+}
+
+void Model::SetQuantizationType(DataType type) {
+    quantization_type_ = type;
+}
+
+void Model::SetQuantized(bool quantized) {
+    quantized_ = quantized;
+}
+
+void Model::SetPruned(bool pruned) {
+    pruned_ = pruned;
+}
+
+void Model::SetPruningRatio(float ratio) {
+    pruning_ratio_ = ratio;
+}
+
+void Model::SetGraphOptimized(bool optimized) {
+    graph_optimized_ = optimized;
+}
+
+bool Model::IsValid() const {
+    return !name_.empty() && 
+           type_ != ModelType::UNKNOWN && 
+           size_ > 0 && 
+           !input_shapes_.empty() && 
+           !output_shapes_.empty();
 }
 
 } // namespace edge_ai

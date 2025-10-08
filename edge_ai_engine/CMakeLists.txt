@@ -40,6 +40,11 @@ find_package(OpenCL QUIET)
 find_package(Vulkan QUIET)
 find_package(Eigen3 QUIET)
 
+# CUDA configuration - temporarily disabled due to header conflicts
+# TODO: Fix CUDA header compatibility issues
+message(STATUS "CUDA temporarily disabled - using CPU-only backend")
+add_compile_definitions(ENABLE_CUDA=0)
+
 # Third-party dependencies
 include(FetchContent)
 
